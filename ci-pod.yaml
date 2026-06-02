@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Pod
-metadata:
- name: ci-pod
- labels: 
-   app: myapp
-
-spec:
-  containers:
-  - name: niginx-cont
+metadata: 
+  name: ci-pod
+  labels: 
+    app: myapp
+    env: devops
+spec: 
+  containers: 
+  - name: nginx-container
     image: nginx:latest
-    ports:
-    - containerPorts: 80
+    ports: 
+    - name: mynginxport
+      containerPort: 80

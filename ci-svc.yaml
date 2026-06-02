@@ -8,7 +8,7 @@ spec:
  type: ClusterIP
  selector:
   app: myapp
-ports:
+  ports:
  - name: ci-port
     protocol: TCP
     port: 80

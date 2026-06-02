@@ -10,4 +10,4 @@ spec:
   -name: niginx-cont
    image: nginx:latest
    ports:
-   -containerPorts: 80
+   - containerPorts: 80

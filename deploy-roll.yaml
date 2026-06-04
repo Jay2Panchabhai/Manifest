@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: my-deployment 
   labels: 
-    stat: rool
+    stat: roll-up
 spec: 
   replicas: 3 
   strategy: 
@@ -18,7 +18,7 @@ spec:
     metadata: 
       name: deploy-template 
       labels: 
-        stat: rool
+        stat: rool-up
     spec: 
       containers: 
       - name: nginx-cont 
@@ -33,7 +33,7 @@ kind: Service
 metadata: 
   name: deployment-svc 
   labels: 
-    stat: rool
+    stat: rool-up
 spec: 
   type: NodePort 
   selector: 

@@ -1,43 +1,43 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: roll-deploy
-  labels:
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: my-deployment 
+  labels: 
     stat: rool
-spec:
-  replicas: 3
-  strategy:
+spec: 
+  replicas: 3 
+  strategy: 
     type: RollingUpdate
-    rollingUpdate:
+    rollingUpdate: 
       maxSurge: 1
       maxUnavailable: 1
-  selector:
-    matchLabels:
-      stat: rool
-  template:
-    metadata:
-      name: roll-template
-      labels:
+  selector: 
+    matchLabels: 
+      app: myapp 
+  template: 
+    metadata: 
+      name: deploy-template 
+      labels: 
         stat: rool
-    spec:
-      containers:
-      - name: nginx-cont
-        image: nginx:latest
-        ports:
-        - containerport: 80
+    spec: 
+      containers: 
+      - name: nginx-cont 
+        image: nginx:latest 
+        ports: 
+        - name: nginx-port 
+          containerPort: 80
 ...
 ---
-apiVersion: v1
-kind: Service
-metedata:
-  name: roll-svc
-  labels:
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: deployment-svc 
+  labels: 
     stat: rool
-spec:
-  type: NodePort
-  selector:
+spec: 
+  type: NodePort 
+  selector: 
     stat: rool
-  ports:
-    port: 80
+  ports: 
+  - port: 80
     targetPort: 80
-

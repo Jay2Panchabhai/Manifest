@@ -41,5 +41,5 @@ spec:
   selector:
     obj: SS-DB
   ports:
-  - port: 80
+  - port: 3306
   ClusterIP: None

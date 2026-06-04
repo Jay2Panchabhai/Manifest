@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: ss--pod
   labels:
-    ojb: SS-DB
+    obj: SS-DB
 spec:
   replicas: 3
   serviceName: Headless-svc

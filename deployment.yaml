@@ -1,6 +1,6 @@
 apiVersion: app/v1
 kind: Deployment
-metadat:
+metadata:
   name: deploy-pod
   labels: 
     app: myapp

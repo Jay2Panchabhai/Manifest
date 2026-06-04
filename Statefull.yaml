@@ -8,8 +8,8 @@ spec:
   replicas: 3
   serviceName: head-svc
   selector:
-  matchLabels:
-    obj: SS-DB
+    matchLabels:
+      obj: SS-DB
   template:
     metadata:
       name: DB-template

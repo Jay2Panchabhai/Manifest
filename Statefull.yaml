@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefullSet
+metadata:
+  name: ss--pod
+  labels:
+    ojb: SS-DB
+spec:
+  replicas: 3
+  ServiceName: adless-svc
+  selector:
+    obj: SS-DB
+  template:
+    metadata:
+      name: DB-template
+      labels: 
+        obj: SS-DB
+    spec:
+      containers:
+      - name: db-cont
+        image: mysql:latest
+        ports:
+        containerPorts: 3306
+        env:
+        - name: MY_SQL_ROOT_PASSWORD
+          value: root123
+        - name: MYSQL_USER
+          value: admin
+        - name: MYSQL_PASSWORD
+          value:  admin123
+        - name: MYSQL_DATABASE
+          value : studentdbb
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: Headless-svc
+  labels:
+    obj: SS-DB
+spec:
+  selector:
+    obj: SS-DB
+  ports:
+  - port: 80
+  ClusterIP: None

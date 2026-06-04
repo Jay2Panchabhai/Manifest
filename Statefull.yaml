@@ -6,7 +6,7 @@ metadata:
     obj: SS-DB
 spec:
   replicas: 3
-  serviceName: Headless-svc
+  serviceName: head-svc
   selector:
     obj: SS-DB
   template:
@@ -34,7 +34,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Headless-svc
+  name: head-svc
   labels:
     obj: SS-DB
 spec:

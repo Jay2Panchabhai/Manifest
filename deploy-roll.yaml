@@ -18,7 +18,7 @@ spec:
     metadata: 
       name: deploy-template 
       labels: 
-        stat: rool-up
+        stat: roll-up
     spec: 
       containers: 
       - name: nginx-cont 
@@ -33,11 +33,11 @@ kind: Service
 metadata: 
   name: deployment-svc 
   labels: 
-    stat: rool-up
+    stat: roll-up
 spec: 
   type: NodePort 
   selector: 
-    stat: rool
+    stat: roll-up
   ports: 
   - port: 80
     targetPort: 80

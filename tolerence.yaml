@@ -1,0 +1,18 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: mypod
+  labels:
+    app: myapp
+spec:
+  tolerations:
+  - key: "prod"
+    operator: "Equal"
+    values: "true"
+    effects: "NoSchedule"
+  containers:
+  - name: nginx-cont
+    image:  nginx:latest
+    ports:
+    - name: nginx-port
+      containerPort: 80

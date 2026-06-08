@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    app: myapp
+  nameSpace: autoscaling 
+  spec:
+    replicas: 1
+    selector:
+      app: myapp
+    template:
+      metadata:
+        name: template-deploy
+        labels:
+          app: myapp
+      spec:
+        containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+          - name: nginx-port
+            containerPort: 80
+          resources:
+            requests: 
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+

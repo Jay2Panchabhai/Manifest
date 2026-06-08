@@ -5,27 +5,27 @@ metadata:
   labels:
     app: myapp
   namespace: autoscaling 
-  spec:
-    replicas: 1
+spec:
+  replicas: 1
     selector:
       app: myapp
-    template:
-      metadata:
-        name: template-deploy
-        labels:
+  template:
+    metadata:
+      name: template-deploy
+      labels:
           app: myapp
-      spec:
-        containers:
-        - name: nginx-container
-          image: nginx:latest
-          ports:
-          - name: nginx-port
-            containerPort: 80
-          resources:
-            requests: 
-              cpu: 100m
-              memory: 128Mi
-            limits:
-              cpu: 200m
-              memory: 256Mi
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - name: nginx-port
+          containerPort: 80
+        resources:
+          requests: 
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
 

@@ -1,7 +1,7 @@
 apiVersion: autoscaling.k8s.io/v1 
 kind: VerticalPodAutoscaler
 metadata: 
-  name: vpa-deployment
+  name: vpa-deploy
   labels: 
     app: myapp 
   namespace: autoscaling 
@@ -21,4 +21,4 @@ spec:
       maxAllowed:
         cpu: 1
         memory: 256Mi
-        
+

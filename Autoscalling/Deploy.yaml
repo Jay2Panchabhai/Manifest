@@ -4,7 +4,7 @@ metadata:
   name: my-deployment
   labels:
     app: myapp
-  nameSpace: autoscaling 
+  namespace: autoscaling 
   spec:
     replicas: 1
     selector:

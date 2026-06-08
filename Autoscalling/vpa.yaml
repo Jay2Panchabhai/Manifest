@@ -11,13 +11,14 @@ spec:
     kind: Deployment 
     name: vpa-deployment
   updatePolicy:
-   updateMode: Auto
+    updateMode: Auto
   resourcePolicy:
     containerPolicies:
     - containerName: application
       minAllowed:
         cpu: 100m
-        memory: Mi
+        memory: 128Mi
       maxAllowed:
         cpu: 1
-        memory: 1Gi
+        memory: 256Mi
+        

@@ -15,7 +15,7 @@ spec:
       labels:
         app: httpd-ig
     spec:
-      conatiners:
+      containers:
       - name: httpd-container
         image: httpd:latest
         ports:

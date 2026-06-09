@@ -15,7 +15,7 @@ spec:
       labels:
         app: tomcat-ig
     spec:
-      conatiners:
+      containers:
       - name: tomcat-container
         image: tomcat:latest
         ports:

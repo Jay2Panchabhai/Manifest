@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: httpd-mobile
   labels:
-    app: httpd-IG
+    app: httpd-ig
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: httpd-IG
+      app: httpd-ig
   template:
     metadata:
       name: mobile-template
       labels:
-        app: httpd-IG
+        app: httpd-ig
     spec:
       conatiners:
       - name: httpd-container
@@ -29,7 +29,7 @@ metadat:
 spec:
   type: ClusterIP
   selector:
-    app: httpd-IG
+    app: httpd-ig
   ports:
   - name: svc-port
     protocol: TCP

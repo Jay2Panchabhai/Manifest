@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: tomcat-laptop
   labels:
-    app: tomcat-IG
+    app: tomcat-ig
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tomcat-IG
+      app: tomcat-ig
   template:
     metadata:
       name: laptop-template
       labels:
-        app: tomcat-IG
+        app: tomcat-ig
     spec:
       conatiners:
       - name: tomcat-container
@@ -29,7 +29,7 @@ metadat:
 spec:
   type: ClusterIP
   selector:
-    app: tomcat-IG
+    app: tomcat-ig
   ports:
   - name: svc-port
     protocol: TCP

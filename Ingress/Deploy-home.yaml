@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-IG
+  labels:
+    app: nginx-IG
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-IG
+  template:
+    metadata:
+      name: home-template
+      labels:
+        app: nginx-IG
+    spec:
+      conatiners:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+...
+---
+apiVersion: v1
+kind: Service
+metadat:
+  name: home-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx-IG
+  ports:
+  - name: svc-port
+    protocol: TCP
+    port: 80
+    targetPort: 80

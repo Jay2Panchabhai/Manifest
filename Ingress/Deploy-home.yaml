@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-IG
+  name: nginx-ig
   labels:
-    app: nginx-IG
+    app: nginx-ig
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-IG
+      app: nginx-ig
   template:
     metadata:
       name: home-template
       labels:
-        app: nginx-IG
+        app: nginx-ig
     spec:
       containers:
       - name: nginx-container
@@ -30,7 +30,7 @@ metadat:
 spec:
   type: ClusterIP
   selector:
-    app: nginx-IG
+    app: nginx-ig
   ports:
   - name: svc-port
     protocol: TCP
